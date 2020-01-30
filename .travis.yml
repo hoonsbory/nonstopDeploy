@@ -13,8 +13,8 @@ cache:
     - '$HOME/.gradle'
 
 script: 
-  "chmod +x ./mvnw"
-  "./mvnw clean package"
+      - chmod +x ./mvnw
+      - ./mvnw clean package
 
 # CI 실행 완료시 메일로 알람
 notifications:
