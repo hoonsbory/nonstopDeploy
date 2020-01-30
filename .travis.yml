@@ -6,6 +6,10 @@ before_install:
 branches:
   only:
     - master
+before_deploy:
+  - zip -r springboot-webservice *
+  - mkdir -p deploy
+  - mv springboot-webservice.zip deploy/springboot-webservice.zip
 
 # Travis CI 서버의 Home
 cache:
@@ -23,9 +27,10 @@ notifications:
       - tonymkcv93@gmail.com 
 deploy:
   - provider: s3
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: jaehoon-bucket # 6-3-3에서 생성한 S3 버킷
+    bucket: my-nonstop-deploy # 6-3-3에서 생성한 S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
     acl: public_read
