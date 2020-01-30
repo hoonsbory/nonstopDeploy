@@ -1,0 +1,12 @@
+---
+server: 
+    port: 8443
+spring: 
+    profiles: 
+        active : set1
+
+---
+spring: 
+    profiles: set2
+server: 
+    port: 8444
