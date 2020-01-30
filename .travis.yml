@@ -33,7 +33,7 @@ deploy:
     bucket: my-nonstop-deploy # 6-3-3에서 생성한 S3 버킷
     key: springboot-webservice.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip
-    application: springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    application: nonstopdeploy-app # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: springboot-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     skip_cleanup: true
