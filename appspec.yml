@@ -4,13 +4,8 @@ files:
   - source:  /
     destination: /home/ubuntu/app/travis/build/
 
-permissions:
-  - object: /
-    pattern: "**"
-    owner: ubuntu
-    group: ubuntu
+
 hooks:
   AfterInstall:
-    - location: deploy.sh
+    - location: execute-deploy.sh
       timeout: 60
-      runas: ubuntu
