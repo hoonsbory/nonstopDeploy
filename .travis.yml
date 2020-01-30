@@ -1,7 +1,8 @@
 language: java
 jdk:
   - openjdk8
-
+before_install:
+  - chmod +x mvnw
 branches:
   only:
     - master
@@ -13,7 +14,6 @@ cache:
     - '$HOME/.gradle'
 
 script: 
-      - chmod +x ./mvnw
       - ./mvnw clean package
 
 # CI 실행 완료시 메일로 알람
